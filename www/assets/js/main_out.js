@@ -498,6 +498,7 @@
         showNames: true,
         showLeaderboard: true,
         showChat: true,
+	showGrid: false,
         showGrid: true,
         showTextOutline: true,
         showColor: true,
@@ -1293,6 +1294,9 @@
     };
     wHandle.setColors = function(a) {
         settings.showColor = !a;
+    };
+	wHandle.showGrid = function(a) {
+settings.showGrid = a;
     };
     wHandle.setNames = function(a) {
         settings.showNames = a;
