@@ -1151,7 +1151,7 @@
         mainCanvas.focus();
         function handleScroll(event) {
             mouseZ *= Math.pow(.9, event.wheelDelta / -120 || event.detail || 0);
-            1 > mouseZ && (mouseZ = 1);
+            if (!settings.unlZoom) 1 > mouseZ && (mouseZ = 1);
             mouseZ > 4 / mouseZ && (mouseZ = 4 / mouseZ);
         }
         if (/firefox/i.test(navigator.userAgent))
@@ -1292,6 +1292,10 @@
     wHandle.setSkins = function(a) {
         settings.showSkins = a;
     };
+	
+wHandle.unlZoom = function(a) {
+settings.unlZoom = a	
+};
     wHandle.setColors = function(a) {
         settings.showColor = !a;
     };
